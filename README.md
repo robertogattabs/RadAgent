@@ -115,7 +115,7 @@ The most interesting element, _lista.modelli_, is a list which contains a set of
 * _auc_ : the numeric value of the AUC of the _roc_;
 * _confusion.matric_ : the confusion matrix built using a default threshold of .5. Differend confusion matrices can actually be built directly using the model provided in _modello_ and the _predict_ function of R (e.g.: see [3]).
 
-
+![ROC example](/ROC.example.png)
 
 
 ---

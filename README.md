@@ -102,7 +102,11 @@ The returned _lst.models_  is a list containing the following elements (the most
 
 * _tmp.str.covariate_ : the string of the covariates in the "winning model";
 * _covariate.incluse_ : the same of _tmp.str.covariate_ but in form of array;
-
+* _lista.modelli_ : a list, described below (this is probably the most interesting result);
+* _arr.accuracy_ : an array containing the accuracy of the best models. The accuracy is calculated with a threshold of .5. Please, use this carefully because in case of unbalanced outcomes this can lead you to misunderstand and overestimate the performances of the models;
+* _arr.sensitivity_ : this is the array of the sensitivity (see _arr.accuracy_ for details);
+* _arr.specificity_ : this is the array of the specificity (see _arr.accuracy_ for details);
+* _arr.AUC_ : this is the array with the AUC of the best models;
 
 ---
 references:

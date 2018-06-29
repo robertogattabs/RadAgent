@@ -108,6 +108,16 @@ The returned _lst.models_  is a list containing the following elements (the most
 * _arr.specificity_ : this is the array of the specificity (see _arr.accuracy_ for details);
 * _arr.AUC_ : this is the array with the AUC of the best models;
 
+The most interesting element, _lista.modelli_, is a list which contains a set of "good" models, providing for each:
+
+* _modello_ : the R Regressor model (with coefficients, Degrees of Freedom, Akaike information criterion, etc..). This can  be easily used to predict the outcome for new nets of incoming data.
+* _roc_ : the ROC curve (which can be easily plot with the _plot_ command). This also contains the information on the confidence interval;
+* _auc_ : the numeric value of the AUC of the _roc_;
+* _confusion.matric_ : the confusion matrix built using a default threshold of .5. Differend confusion matrices can actually be built directly using the model provided in _modello_ and the _predict_ function of R (e.g.: see [3]).
+
+
+
+
 ---
 references:
 
@@ -115,6 +125,7 @@ references:
 
 [2] Zwanenburg A, Leger S, Vallières M, Löck S. Image biomarker standardisation initiative, eprint arXiv:1612.07003. Available (29/06/2018) at: https://arxiv.org/abs/1612.07003 
 
+[3] http://stat.ethz.ch/R-manual/R-devel/library/stats/html/predict.lm.html
 
 ---
 

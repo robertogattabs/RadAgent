@@ -43,28 +43,12 @@ other.covariates.matrix <- cbind( "eta"=arr.eta, "sesso"=arr.sesso,
 ```
 
 ### RADIOMICS agent
-Starting from the moddicom package, [moddicom]
+Starting from the moddicom package, [1]
 
 
 ---
 references:
-- id: moddicom
-  title: Moddicom: a complete and easily accessible library for prognostic evaluations relying on image features
-  author:
-    Dinapoli N, 
-    Alitto AR, 
-    Vallati M, 
-    Gatta R, 
-    Autorino R, 
-    Boldrini L, 
-    Damiani A, 
-    Valentini V
-  container-title: Conf Proc IEEE Eng Med Biol Soc
-  URL: 'http://dx.doi.org/10.1038/nmat3283'
-  DOI: 10.1109/EMBC.2015.7318476
-  page: 771-4
-  issued:
-    year: 2015
+[1] Dinapoli N, Alitto AR, Vallati M, Gatta R, Autorino R, Boldrini L, Damiani A, Valentini V. Moddicom: a complete and easily accessible library for prognostic evaluations relying on image features. Conf Proc IEEE Eng Med Biol Soc. 2015 Aug;2015:771-4. doi: 10.1109/EMBC.2015.7318476.
 
 ---
 

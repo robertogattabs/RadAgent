@@ -22,7 +22,8 @@ names(arr.clinicalOutcome) <- as.character( c(seq(2,6),seq(9,17),seq(19,24),seq(
 ```
 
 ### Loading other clinical covariates
-Now I load other clinical covariates, such as Age, Sex, status of the pelivic lymphnodes, cT and cN. I build a new matrix called 'other.covariates.matrix':
+This step is optional: you can train a Radiomics model based only on features acquired from the DICOM images.
+However, as example, now I load other clinical covariates, such as Age, Sex, status of the pelivic lymphnodes, cT and cN. I build a new matrix called 'other.covariates.matrix':
 
 ```
 # assign the AGE, present in the csv (numeric)
@@ -38,5 +39,34 @@ arr.xN <- csv.Dino$N
 # build the matrix with the clinical variables to include in the model
 other.covariates.matrix <- cbind( "eta"=arr.eta, "sesso"=arr.sesso, 
                                   "STATO.LINFONODI.INGUINALI"=arr.STATO.LINFONODI.INGUINALI, 
-                                  "xT"=arr.xT, "xN"=arr.xN )
+                                  "xT"=arr.xT, "xN"=arr.xN )                                 
 ```
+
+### RADIOMICS agent
+Starting from the moddicom package, [@fenner2012a]
+
+
+---
+references:
+- id: fenner2012a
+  title: One-click science marketing
+  author:
+  - family: Fenner
+    given: Martin
+  container-title: Nature Materials
+  volume: 11
+  URL: 'http://dx.doi.org/10.1038/nmat3283'
+  DOI: 10.1038/nmat3283
+  issue: 4
+  publisher: Nature Publishing Group
+  page: 261-263
+  type: article-journal
+  issued:
+    year: 2012
+    month: 3
+---
+
+
+
+
+

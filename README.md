@@ -115,6 +115,12 @@ The most interesting element, _lista.modelli_, is a list which contains a set of
 * _auc_ : the numeric value of the AUC of the _roc_;
 * _confusion.matric_ : the confusion matrix built using a default threshold of .5. Differend confusion matrices can actually be built directly using the model provided in _modello_ and the _predict_ function of R (e.g.: see [3]).
 
+Here is an example of a monovariate Logist Model ROC, built on a set of 36 PET images of patients affected from rectal cancer. The model uses two image features extracted after a LoG filtered with sigma equal to 4. The two features are _F_cm.inv.diff.norm_ and _F_cm.contrast_, see [2] for details.
+
+```
+plot(lst.models$lista.modelli$`s_4_F_cm.inv.diff.norm+s_4_F_cm.contrast`$roc)
+```
+
 ![ROC example](/ROC.example.png)
 
 

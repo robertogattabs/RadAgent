@@ -72,9 +72,20 @@ m.features <- obj$scoutFeatures(pathName = "/images/test4RadAgent/",
                                 arr.sigma=c( 3.2, 3.4, 3.6, 3.8, 4, 4.2, 4.4,  4.6, 4.8, 5, 5.2, 5.4, 5.6, 5.8, 6 ),
                                 arr.clinicalOutcome=arr.clinicalOutcome, 
                                 matrice.altre.covariate = matrice.altre.covariate,
-                                forceRecalculus = FALSE,
-                                cache.fileName = "dino.RData")
+                                cache.fileName = "dino.RData",
+                                forceRecalculus = FALSE,)
 ```
+
+The meaning of the parameters is the following:
+
+* __pathName__ : the folder containin the subfolders with the DICOM studies. Each subfolder name must have a corresponding named position in the clinical array outcome;
+* __ROIName__ : the ROIName that shuold be extracted;
+* __feature.family__ : the features families you want to extract;
+* __arr.sigma__ : the array with the sigma for the LoG filtering. Sigmas are expressed in mm, so be sure to adopt sigma values comparable (larger) than your pixelspacing;
+* __arr.clinicalOutcome__ : the array containing the clinical outcomes;
+* __matrice.altre.covariate__ : the matrix containing the other clinical variables you want to use to enrich the model (optional);
+* __cache.fileName__ : the name of the file adopted to cache the computation. This is useful because if you want to interrupt the computation, you can: when the script will be run again, if "force-recalculus" is set to FALSE, it will load from this cache file what was already calculated;
+* __forceRecalculus__ : do not exploit the cache: if you find a cache delete it and calculate all from scratch;
 
 
 

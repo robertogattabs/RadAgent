@@ -43,7 +43,9 @@ other.covariates.matrix <- cbind( "eta"=arr.eta, "sesso"=arr.sesso,
 ```
 
 ### RADIOMICS agent
-RadAgent extends the moddicom package [1], providing the entire pipeline for Radiomics investigation. This means that RadAgent:
+RadAgent extends the moddicom package [1], providing the entire pipeline for Radiomics investigation. Because of that, it requires a set of DICOM studies formatted in a way compatible with moddicom. This means, for example (a) axial or almost-axial projections only, (b) voxels disjointed and adiacents, (c) no missing image slices and (d) a DICOM RTStruct object contaning the contoured ROI (Region Of Interest).
+
+Starting from those, RadAgent: 
 * extract the image features on the found foldes, given and entry point on the filesystem. The features are compliant with the Image biomarker standardisation initiative [2].
 * given and entry point on the filesystem, it loads the images from the found foldes. 
 * applies the LoGs filtering, according to the given sigmas;

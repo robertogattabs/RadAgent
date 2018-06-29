@@ -51,7 +51,7 @@ references:
 - id: moddicom
   title: Moddicom: a complete and easily accessible library for prognostic evaluations relying on image features
   author:
-  - Dinapoli N, 
+    Dinapoli N, 
     Alitto AR, 
     Vallati M, 
     Gatta R, 

@@ -1,0 +1,35 @@
+---
+title: "Scouting Pixel Spacing"
+output:
+  html_document:
+    number_sections: yes
+    toc: yes
+    theme: cosmo
+  pdf_document:
+    number_sections: yes
+    toc: true
+    highlight: zenburn
+---
+# Significant covariates plot
+
+```{r, echo=FALSE}
+prova <- lapply(names(SignificantPValue), function(x){ 
+  significativa <- data.frame("sigma"=c(seq(from=from.sigma, to=to.sigma, by=def.by)), "p_value"=SignificantPValue[[x]])
+  
+  plot(x = seq(from=from.sigma, to=to.sigma, by=def.by), y = SignificantPValue[[x]], type = "l", xlab = paste0("sigma (min sigma=",significativa$sigma[which(significativa$p_value==min(significativa$p_value))], ")"), ylab = x, main = x)
+  abline(h = 0.05, col="red")
+  abline(v = significativa$sigma[which(significativa$p_value==min(significativa$p_value))],  col="green")
+  
+  print(significativa[which(significativa$p_value<=0.05),])
+  })
+```
+
+
+# Not Significant covariates plot
+
+```{r, echo=FALSE}
+prova <- lapply(names(NotSignificantPValue), function(x){
+ plot(x = seq(from=from.sigma, to=to.sigma, by=def.by), y = NotSignificantPValue[[x]], type = "l", xlab = "sigma", ylab = x, main = x)
+  abline(h = 0.05, col="red")
+})
+```

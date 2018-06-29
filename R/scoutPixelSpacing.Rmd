@@ -1,0 +1,42 @@
+---
+title: "Scouting Pixel Spacing"
+output:
+  html_document:
+    number_sections: yes
+    toc: yes
+    theme: cosmo
+  pdf_document:
+    number_sections: yes
+    toc: true
+    highlight: zenburn
+---
+# Density pixel spacing X
+
+```{r, echo=FALSE}
+plot(table(pixelX), main='Density plot pixel spacing X')
+```
+
+```{r, echo=FALSE}
+knitr::kable(rbind(summary(pixelX)))
+```
+
+
+```{r, echo=FALSE}
+knitr::kable(cbind("Patient"=unlist(patList), pixelX))
+```
+
+
+# Density pixel spacing Y
+
+```{r, echo=FALSE}
+plot(table(pixelY), main='Density plot pixel spacing Y')
+```
+
+```{r, echo=FALSE}
+knitr::kable(rbind(summary(pixelY)))
+```
+
+
+```{r, echo=FALSE}
+knitr::kable(cbind("Patient"=unlist(patList), pixelY))
+```

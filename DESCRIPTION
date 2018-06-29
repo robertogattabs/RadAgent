@@ -1,0 +1,17 @@
+Package: RadAgent
+Type: Package
+Title: Package for handling DICOM RT files
+Version: 0.25
+Date: 2014-11-26
+Author: Nicola Dinapoli, Roberto Gatta
+Maintainer: Nicola Dinapoli <nicola.dinapoli@rm.unicatt.it>
+Description: This package allows to load DICOM CT scans, MRIs, RTStruct, RTDose
+    and RTPlan. The aim of the package is to give a tool to perform
+    radiaotherapy dose analysis, handle voxels and ROI in a 3D space. A list of
+    wrappers for performing dose-response models analysis and fitting is given.
+License: GPL-2
+Imports:
+    XML (>= 3.98-1.1),
+    stringr (>= 0.6.2)
+NeedsCompilation: yes
+RoxygenNote: 6.0.1

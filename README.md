@@ -44,9 +44,13 @@ other.covariates.matrix <- cbind( "eta"=arr.eta, "sesso"=arr.sesso,
 
 ### RADIOMICS agent
 RadAgent extends the moddicom package [1], providing the entire pipeline for Radiomics investigation. This means that RadAgent:
-
 * extract the image features on the found foldes, given and entry point on the filesystem. The features are compliant with the Image biomarker standardisation initiative [2].
-* 
+* given and entry point on the filesystem, it loads the images from the found foldes. 
+* applies the LoGs filtering, according to the given sigmas;
+* for each filtered image, it extracts the features, compliant with the Image biomarker standardisation initiative [2].
+* for each feature, changing the sigmas in the LoG filtering, it calculate makes a Mann Withney test with the clinical outcome. Then it takes the sigmas able to give the highest performances to that feature. In case of high variation of the p.value for small variations of the sigma, it can discharge the feature (doubt of overfitting)
+* it check the couple of features and in case of high correlation (pearson test) it discharge the feature with the lowest performance in predicting the results;
+* it begins to build a model with a feedforeward feature selection strategy, until the number of requested feature in the model is reached.
 
 
 ---

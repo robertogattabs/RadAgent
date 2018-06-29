@@ -43,7 +43,7 @@ other.covariates.matrix <- cbind( "eta"=arr.eta, "sesso"=arr.sesso,
 ```
 
 ### RADIOMICS agent
-Starting from the moddicom package, [@fenner2012a]
+Starting from the moddicom package, [fenner2012a]
 
 
 ---

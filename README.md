@@ -43,12 +43,19 @@ other.covariates.matrix <- cbind( "eta"=arr.eta, "sesso"=arr.sesso,
 ```
 
 ### RADIOMICS agent
-Starting from the moddicom package, [1]
+RadAgent extends the moddicom package [1], providing the entire pipeline for Radiomics investigation. This means that RadAgent:
+
+* extract the image features on the found foldes, given and entry point on the filesystem. The features are compliant with the Image biomarker standardisation initiative [2].
+* 
 
 
 ---
 references:
+
 [1] Dinapoli N, Alitto AR, Vallati M, Gatta R, Autorino R, Boldrini L, Damiani A, Valentini V. Moddicom: a complete and easily accessible library for prognostic evaluations relying on image features. Conf Proc IEEE Eng Med Biol Soc. 2015 Aug;2015:771-4. doi: 10.1109/EMBC.2015.7318476.
+
+[2] Zwanenburg A, Leger S, Vallières M, Löck S. Image biomarker standardisation initiative, eprint arXiv:1612.07003. Available (29/06/2018) at: https://arxiv.org/abs/1612.07003 
+
 
 ---
 

@@ -52,6 +52,32 @@ RadAgent extends the moddicom package [1], providing the entire pipeline for Rad
 * it check the couple of features and in case of high correlation (pearson test) it discharge the feature with the lowest performance in predicting the results;
 * it begins to build a model with a feedforeward feature selection strategy, until the number of requested feature in the model is reached.
 
+A RadAgent object can be easyly instantiated with
+
+```
+obj <- RAD.RadiomicAgent()
+```
+
+The default values for the internal parameters (a rich set of threshold of the previously cited steps) can be set with:
+
+```
+obj$set.param()
+```
+
+The model can now be trained with:
+
+```
+m.features <- obj$scoutFeatures(pathName = "/images/test4RadAgent/",
+                                ROIName = "GTV",feature.family = c("stat","morph","glcm","rlm","szm"),
+                                arr.sigma=c( 3.2, 3.4, 3.6, 3.8, 4, 4.2, 4.4,  4.6, 4.8, 5, 5.2, 5.4, 5.6, 5.8, 6 ),
+                                arr.clinicalOutcome=arr.clinicalOutcome, 
+                                matrice.altre.covariate = matrice.altre.covariate,
+                                forceRecalculus = FALSE,
+                                cache.fileName = "dino.RData")
+```
+
+
+
 
 ---
 references:

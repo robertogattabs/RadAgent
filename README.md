@@ -51,6 +51,7 @@ RadAgent extends the moddicom package [1], providing the entire pipeline for Rad
 * for each feature, changing the sigmas in the LoG filtering, it calculate makes a Mann Withney test with the clinical outcome. Then it takes the sigmas able to give the highest performances to that feature. In case of high variation of the p.value for small variations of the sigma, it can discharge the feature (doubt of overfitting)
 * it check the couple of features and in case of high correlation (pearson test) it discharge the feature with the lowest performance in predicting the results;
 * it begins to build a model with a feedforeward feature selection strategy, until the number of requested feature in the model is reached.
+* the trained model is a logist regressor, which performances are calculated in terms of AUC of the ROC curve.
 
 A RadAgent object can be easyly instantiated with
 
@@ -87,7 +88,20 @@ The meaning of the parameters is the following:
 * __cache.fileName__ : the name of the file adopted to cache the computation. This is useful because if you want to interrupt the computation, you can: when the script will be run again, if "force-recalculus" is set to FALSE, it will load from this cache file what was already calculated;
 * __forceRecalculus__ : do not exploit the cache: if you find a cache delete it and calculate all from scratch;
 
+Important note: the computation can take a loooooong time (hours or days, depending on how much sigmas you want to investigate). I suggest you to set the _forceRecalculus_ to _FALSE_.
 
+After the computation, you can retrieve a model for example with two covariate with:
+
+```
+lst.models <- obj$featureSelection(  number.of.cov =  2)
+```
+
+### Interpreting the results
+
+The returned _lst.models_  is a list containing the following elements (the most important):
+
+* _tmp.str.covariate_ : the string of the covariates in the "winning model";
+* _covariate.incluse_ : the same of _tmp.str.covariate_ but in form of array;
 
 
 ---
